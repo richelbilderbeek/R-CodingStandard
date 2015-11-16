@@ -6,16 +6,277 @@ Coding standard for R, combining:
 * The document 'Rchaeology: Idioms of R Programming' by Paul E. Johnson, January 28, 2015, [PDF](http://pj.freefaculty.org/R/Rchaeology.pdf)
 * The document 'Rtips.  Revival 2014!' by Paul E. Johnson, March 24, 2014, [PDF](http://pj.freefaculty.org/R/Rtips.pdf)
 
+# General
+
+
+## Avoid lines longer than 80 characters
+
+```
+[Example here]
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `The maximum line length is 80 characters`
+
+## Prefer placing spaces around all binary operators 
+
+```
+x <- 42
+y <- x + 314
+z <- y - 42
+
+if (a == b) print("Equal")
+if (a != b) print("Unequal")
+if (a < b) print("Less")
+if (a <= b) print("Less or equal")
+if (a > b) print("Greater")
+if (a >= b) print("Greater or equal")
+
+Show <- function(s = "Hello World") { # Note the spaces around the =
+   # ...
+}
+```
+
+### Exception
+
+Spaces around ='s are optional when passing parameters in a function call.
+
+```
+rep(x = 314, times = 42) # Good
+rep(x=314, times=42)     # Okay
+```
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place spaces around all binary operators (=, +, -, <-, etc.). Exception: Spaces around ='s are optional when passing parameters in a function call.`
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Prefer indenting with two spaces
+
+```
+if (x == 42) {
+  print("Yes!")
+}
+```
+
+### Exception
+
+When a line break occurs inside parentheses, 
+align the wrapped line with the first character inside the parenthesis.
+
+```
+[Example here]
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces. Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.`
+
+## Avoid using tabs
+
+```
+[Example here]
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces.`
+
+## Avoid placing a space before a comma. Prefer to place a space after a comma
+
+```
+t <- sum(x[, 1]) # Good
+t <- sum(x[1, ]) # Good
+t <- sum(x[,1]) # Bad
+t <- sum(x[1,]) # Bad
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Do not place a space before a comma, but always place one after a comma.`
+           
+## Prefer placing a space before a left parenthesis, except when calling a function
+
+```
+if (debug) # Good
+if(debug)  # Bad
+print("Hello")  #Good
+print ("Hello") #Bad
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place a space before left parenthesis, except in a function call.`
+          
+## When modifying other people's code, follow their coding standard
+
+```
+[Example here]
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use common sense and BE CONSISTENT. If you are editing code, take a few minutes to look at the code around you and determine its style. If others use spaces around their if clauses, you should, too. If their comments have little boxes of stars around them, make your comments have little boxes of stars around them, too. The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you are saying, rather than on how you are saying it. [...]. But local style is also important. If code you add to a file looks drastically different from the existing code around it, the discontinuity will throw readers out of their rhythm when they go to read it. Try to avoid this.`
+
+## Do not put more than one command on the same line
+          
+```            
+x <- 42; y <- 314 # Bad
+
+# Good:
+x <- 42
+y <- 314
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Do not terminate your lines with semicolons or use semicolons to put more than one command on the same line`
+
+## Prefer using S3 over S4 
+
+```
+[Example here]
+```          
+
+### Exceptions
+
+Justifications for an S4 object would be:
+
+ * to use objects directly in C++ code
+ * to dispatch on two arguments
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use S3 objects and methods unless there is a strong reason to use S4 objects or methods. A primary justification for an S4 object would be to use objects directly in C++ code. A primary justification for an S4 generic/method would be to dispatch on two arguments.`
+
+## Avoid mixing S3 and S4
+
+```
+[Example here]
+```          
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Avoid mixing S3 and S4: S4 methods ignore S3 inheritance and vice-versa`
+
+
+# Identifiers
+
+## Prefer naming non-constant variables in all lower case separated with dots
+
+```
+my.value # Good
+myVlicks # OK: this is tolerated
+my_value # Bad
+my-value # Bad
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Identifiers should be named according to the following conventions. The preferred form for variable names is all lower case letters and words separated with dots (variable.name), but variableName is also accepted.`
+
+## Prefer naming constant variables in kCamelCase
+
+```
+kPi <- 3.14
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `constants are named like functions but with an initial k`
+
+## Don't use underscores ( _ ) or hyphens ( - ) in identifiers
+
+```
+my.value # Good
+myVlicks # OK: this is tolerated
+my_value # Bad
+my-value # Bad
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Identifiers should be named according to the following conventions. The preferred form for variable names is all lower case letters and words separated with dots (variable.name), but variableName is also accepted.`
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Don't use underscores ( _ ) or hyphens ( - ) in identifiers`
+
+## Prefer naming functions in CamelCase
+
+```
+CalculateVariance # Good
+calculateVariance # Bad
+calculate_variance # Bad
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `function names have initial capital letters and no dots`
+
+## Prefer the first word of a function being a verb
+
+```
+MeasureSpeed # Good
+Speed # Bad
+```
+
+### Exception
+
+When creating a class object, the function name (constructor) and class name should match
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Make function names verbs`
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When creating a class object, the function name (constructor) and class name should match`
+
+# Operator use
+
+## Prefer using `<-` over `=` for assignment.
+          
+```            
+x <- 42 # Good
+x = 42  # Bad
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use <-, not =, for assignment`
+
+## Avoid using semicolons `;`
+          
+```            
+x <- 42  # Good
+x <- 42; # Bad
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Do not terminate your lines with semicolons or use semicolons to put more than one command on the same line`
+
 # File naming
 
 ## Prefer meaningful files names ending in  `.R`
 
- * GOOD: `predict_ad_revenue.R`
- * BAD: `predict_ad_revenue.r`,`foo.R`
+ * Good filames: `predict_ad_revenue.R`
+ * Bad filenames: `predict_ad_revenue.r`,`foo.R`
 
 ### References
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `File names should end in .R and, of course, be meaningful`
+
+# Function use
 
 ## Prefer using `typeof()` over `mode()`
 
@@ -32,7 +293,27 @@ Coding standard for R, combining:
  * [1] Wickham, Hadley. Advanced R. CRC Press, 2014. Page 102
 
 
+## Avoid using `attach`
 
+```
+[Example here]
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `The possibilities for creating errors when using attach are numerous. Avoid it.`
+
+# Error handling
+
+## Errors should be raised using stop()
+
+```
+if (x < 0) stop()
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Errors should be raised using stop()`
 
 
 
@@ -50,12 +331,6 @@ Summary: R Style Rules
 
     
       
-      Identifiers: variable.name
-        (or variableName),
-        FunctionName, kConstantName
-      Line Length: maximum 80 characters
-      Indentation: two spaces, no tabs
-      Spacing
       Curly Braces: first on same line, last on
         own line
       else: Surround else with braces 
@@ -72,118 +347,15 @@ Summary: R Style Rules
        TODO Style: TODO(username)
     
 
-    Summary: R Language Rules
-    
-       attach: avoid using it
-       Functions:
-        errors should be raised using stop()
-       Objects and Methods: avoid S4 objects and
-        methods when possible; never mix S3 and S4 
-    
-
-    Notation and Naming
-
-    
-          
-
-          Identifiers
-          
-            Don't use underscores ( _ ) or hyphens
-            ( - ) in identifiers.
-            Identifiers should be named according to the following conventions.
-            The preferred form for variable names is all lower case
-            letters and words separated with dots
-            (variable.name), but variableName
-            is also accepted;
-            function names have initial capital letters and no dots
-            (FunctionName);
-            constants are named like functions but with an initial
-            k.
-          
-          
-            variable.name is preferred, variableName is accepted
-              
- GOOD: avg.clicks
-              
- OK: avgClicks
-              
- BAD: avg_Clicks
-            
-            FunctionName 
-              
- GOOD: CalculateAvgClicks
-              
- BAD: calculate_avg_clicks
-                ,
-                calculateAvgClicks
-              
- Make function names verbs.
-              
-Exception: When creating a classed object, the function
-                name (constructor) and class should match  (e.g., lm).
-            kConstantName 
-          
 
 
-      Syntax
-
-      Line Length
-
-  The maximum line length is 80 characters.
 
 
-          Indentation
-          
-            When indenting your code, use two spaces.  Never use tabs or mix
-            tabs and spaces.
-            
-Exception: When a line break occurs inside parentheses,
-              align the wrapped line with the first character inside the
-              parenthesis.
-          
-
-        Spacing
-          
-            Place spaces around all binary operators (=,
-            +, -, <-, etc.).
-            
- Exception:  Spaces around ='s are
-            optional when passing parameters in a function call.
           
           
-            Do not place a space before a comma, but always place one after a
-            comma.
-            
-
- GOOD:
-          
-tab.prior <- table(df[df$days.from.opt < 0, "campaign.id"])
-total <- sum(x[, 1])
-total <- sum(x[1, ])
-          
-
-            BAD:
-          
-tab.prior <- table(df[df$days.from.opt<0, "campaign.id"])  # Needs spaces around '<'
-tab.prior <- table(df[df$days.from.opt < 0,"campaign.id"])  # Needs a space after the comma
-tab.prior<- table(df[df$days.from.opt < 0, "campaign.id"])  # Needs a space before <-
-tab.prior<-table(df[df$days.from.opt < 0, "campaign.id"])  # Needs spaces around <-
-total <- sum(x[,1])  # Needs a space after the comma
-total <- sum(x[ ,1])  # Needs a space after the comma, not before
 
           
 
-            Place a space before left parenthesis, except in a function call.
-          
-          
-            GOOD:
-            
-if (debug)
-          
-          
-            BAD:
-            
-if(debug)
           
           
             Extra spacing (i.e., more than one space in a row) is okay if it
@@ -281,26 +453,7 @@ else
 
 
         
-Assignment
           
-            Use <-, not =, for assignment.
-          
-          
-            GOOD:
-            
- x <- 5 
-          
-          
-            BAD:
-            
- x = 5
-          
-        Semicolons
-          
-            Do not terminate your lines with semicolons or use semicolons to
-            put more than one command on the same line. (Semicolons are not
-            necessary, and are omitted for consistency with other Google style
-            guides.)
           
 
 
@@ -413,70 +566,3 @@ TODO Style
 TODO(username): Explicit description of action to
     be taken
 
-
-
-       Language 
-
-        Attach
-         The possibilities for creating errors when using
-          attach are numerous. Avoid it.
-        Functions
-         Errors should be raised using stop().
-        Objects and Methods
-           The S language has two object systems, S3 and S4, both of which
-          are available in R.  S3 methods are more interactive and flexible,
-          whereas S4 methods are more formal and rigorous. (For an illustration
-          of the two systems, see Thomas Lumley's
-          "Programmer's Niche: A Simple
-          Class, in S3 and S4" in R News 4/1, 2004, pgs. 33 - 36:
-          
-          http://cran.r-project.org/doc/Rnews/Rnews_2004-1.pdf.)
-          
-          Use S3 objects and methods unless there is a strong reason to use
-            S4 objects or methods. A primary justification for an S4 object
-            would be to use objects directly in C++ code. A primary
-            justification for an S4 generic/method would be to dispatch on two
-            arguments.
-          
-          Avoid mixing S3 and S4: S4 methods ignore S3 inheritance and
-            vice-versa.
-          
-
-
-     Exceptions
-
-
-  The coding conventions described above should be followed, unless
-  there is good reason to do otherwise.  Exceptions include legacy
-  code and modifying third-party code.
-
-
-
-Parting Words
-
-
-  Use common sense and BE CONSISTENT.
-
-     
-     If you are editing code, take a few minutes to look at the code around
-     you and determine its style. If others use spaces around their
-     if 
-     clauses, you should, too. If their comments have little boxes of stars
-     around them, make your comments have little boxes of stars around them,
-     too.
-     
-     
-     The point of having style guidelines is to have a common vocabulary of
-     coding so people can concentrate on what you are saying,
-     rather than on how you are saying it. We present global style
-     rules here so people
-     know the vocabulary. But local style is also important. If code you add
-     to a file looks drastically different from the existing code around it,
-     the discontinuity will throw readers out of their rhythm when they go to
-     read it. Try to avoid this.
-     
-     
-     
-     OK, enough writing about writing code; the code itself is much more
-     interesting. Have fun!
-     
