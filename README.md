@@ -88,7 +88,7 @@ Justifications for an S4 object would be:
 
 # WS: Whitespace
 
-## WS.1: Prefer placing spaces around all binary operators 
+## WS.1: Prefer placing spaces around all binary operators [1,2]
 
 ```
 x <- 42
@@ -109,15 +109,18 @@ Show <- function(s = "Hello World") { # Note the spaces around the =
 
 ### Exception
 
-Spaces around ='s are optional when passing parameters in a function call.
+Spaces around `=`s are preferred [2] or optional [1] when passing parameters in a function call.
 
 ```
-rep(x = 314, times = 42) # Good
-rep(x=314, times=42)     # Okay
+rep(x = 314, times = 42) # [1] Good [2] Good
+rep(x=314, times=42)     # [1] Okay [2] Bad
 ```
+
+
 ### References
 
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place spaces around all binary operators (=, +, -, <-, etc.). Exception: Spaces around ='s are optional when passing parameters in a function call.`
+ * [1][Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place spaces around all binary operators (=, +, -, <-, etc.). Exception: Spaces around ='s are optional when passing parameters in a function call.`
+ * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.2.1: `Place spaces around all infix operators (=, +, -, <-, etc.). The same rule applies when using = in function calls. Always put a space after a comma, and never before (just like in regular English).`
 
 ## WS.2: Avoid placing spaces around code in parentheses or square brackets
 
@@ -324,70 +327,84 @@ else
 
 # I: Identifiers
 
-## I.1: Prefer naming non-constant variables in all lower case separated with dots
+## I.1: Prefer naming non-constant variables in all lower case separated with dots [1] or underscores [2]
+
+Here, the advice disagrees:
 
 ```
-my.value # Good
-myVlicks # OK: this is tolerated
-my_value # Bad
-my-value # Bad
-```
-
-### References
-
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Identifiers should be named according to the following conventions. The preferred form for variable names is all lower case letters and words separated with dots (variable.name), but variableName is also accepted.`
-
-## I.2: Prefer naming constant variables in kCamelCase
-
-```
-kPi <- 3.14
+my.value # [1] Good [3] Bad
+myVlicks # [1] Okay [3] Bad
+my_value # [2] Bad  [3] Good
+my-value # [2] Bad  [3] Bad
 ```
 
 ### References
 
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `constants are named like functions but with an initial k`
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Identifiers should be named according to the following conventions. The preferred form for variable names is all lower case letters and words separated with dots (variable.name), but variableName is also accepted.`
+ * [2] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Don't use underscores ( _ ) or hyphens ( - ) in identifiers`
+ * [3] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
 
-## I.3: Don't use underscores ( _ ) or hyphens ( - ) in identifiers
-
-```
-my.value # Good
-myVlicks # OK: this is tolerated
-my_value # Bad
-my-value # Bad
-```
-
-### References
-
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Identifiers should be named according to the following conventions. The preferred form for variable names is all lower case letters and words separated with dots (variable.name), but variableName is also accepted.`
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Don't use underscores ( _ ) or hyphens ( - ) in identifiers`
-
-## I.4: Prefer naming functions in CamelCase
+## I.2 Prefer a variable being a noun
 
 ```
-CalculateVariance # Good
-calculateVariance # Bad
-calculate_variance # Bad
+variance # Good
+working # Bad
 ```
 
 ### References
 
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `function names have initial capital letters and no dots`
+ * [1] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
+
+## I.2: consider naming constant variables differently [1]
+
+This idea is suggested by [1], it is unknown what [2] thinks about this.
+
+When embracing the idea, I add the naming schemes for both [1] and [2]:
+
+```
+kPi  <- 3.14  # [1] Good [2] Bad
+k_pi <- 3.14  # [1] Bad  [2] Unknown
+```
+
+### References
+
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `constants are named like functions but with an initial k`
+ * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
+
+
+## I.4: Prefer naming functions in CamelCase [1] or lower_case_with_underscores [2]
+
+Here, the advice disagrees:
+
+```
+CalculateVariance  # [1] Good [2] Bad
+calculateVariance  # [1] Bad  [2] Bad
+calculate_variance # [1] Bad  [2] Good
+```
+
+### References
+
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `function names have initial capital letters and no dots`
+ * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
 
 ## I.5: Prefer the first word of a function being a verb
 
 ```
-MeasureSpeed # Good
-Speed # Bad
+MeasureSpeed  # [1] Good
+measure_speed # [3] Good
+Speed         # [1,3] Bad
+speed         # [1,3] Bad
 ```
 
 ### Exception
 
-When creating a class object, the function name (constructor) and class name should match
+When creating a class object, the function name (constructor) and class name should match [2]
 
 ### References
 
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Make function names verbs`
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When creating a class object, the function name (constructor) and class name should match`
+ * [1][Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Make function names verbs`
+ * [2][Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When creating a class object, the function name (constructor) and class name should match`
+ * [3] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
 
 # FU: Functions
 
@@ -477,17 +494,29 @@ SumFloats <- function(x) {
 
 ## FU.5: Prefer using `typeof()` over `mode()`
 
-`mode()` is an alias of `typeof()` that only exists for S compatibility [1].
+`mode()` is an alias of `typeof()` that only exists for S compatibility.
+
+```
+typeof(x) # Good
+mode(x)   # Bad
+```
 
 ### References
 
- * [1] Wickham, Hadley. Advanced R. CRC Press, 2014. Page 102
+ * Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 7.1, page 102: `You may have heard of mode() and storage.mode(). I recommend ignoring these functions because they are just aliases of the names returned by typeof(), and exist solely for S compatibility`
 
 ## FU.6: Prefer using `typeof()` over `storage.mode()`
 
+`storage.mode()` is an alias of `typeof()` that only exists for S compatibility.
+
+```
+typeof(x)         # Good
+storage.mode(x)   # Bad
+```
+
 ### References
 
- * [1] Wickham, Hadley. Advanced R. CRC Press, 2014. Page 102
+ * Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 7.1, page 102: `You may have heard of mode() and storage.mode(). I recommend ignoring these functions because they are just aliases of the names returned by typeof(), and exist solely for S compatibility`
 
 
 ## FU.7: Avoid using `attach`
@@ -529,14 +558,29 @@ x <- 42; # Bad
 
 ## FI.1: Prefer meaningful files names ending in  `.R`
 
- * Good filenames: `predict_ad_revenue.R`
- * Bad filenames: `predict_ad_revenue.r`,`foo.R`
+ * Good filenames: `predict_ad_revenue.R`, `fit-models.R`
+ * Bad filenames: `predict_ad_revenue.r`,`foo.R`, `utility-functions.R`
 
 ### References
 
-* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `File names should end in .R and, of course, be meaningful`
+ * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `File names should end in .R and, of course, be meaningful`
+ * Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.1: `Filenames should be meaningful and end in .R`
 
-## FI.2: Prefer naming unit test files ending in `_test.R`
+## FI.2: If files need to be run in sequence, consider prefixing them with numbers
+
+```
+0-download.R
+1-parse.R
+2-explore.R
+
+```
+
+### References
+
+ * Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.1: `If files need to be run in sequence, prefix them with numbers`
+
+
+## FI.3: Prefer naming unit test files ending in `_test.R`
 
  * Good filenames: `predict_ad_revenue_test.R`
  * Bad filames: `test_predict_ad_revenue.R`
@@ -545,7 +589,7 @@ x <- 42; # Bad
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Unit tests should go in a separate file named originalfilename_test.R.`
 
-## FI.3: Be consistent in the ordering of a file
+## FI.4: Be consistent in the ordering of a file
 
 An example ordering:
  * Copyright statement comment 
