@@ -1,6 +1,6 @@
 # R-CodingStandard
 
-[R-CodingStandard](R-CodingStandard.md) [PDF](R-CodingStandard.pdf) is a coding standard for R, combining:
+[R-CodingStandard](R-CodingStandard.md) ([PDF](R-CodingStandard.pdf)) is a coding standard for R, combining:
 
  * The book 'Advanced R' by Hadley Wickham, CRC Press, 2014
  * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)
