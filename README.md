@@ -379,6 +379,102 @@ When creating a class object, the function name (constructor) and class name sho
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Make function names verbs`
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When creating a class object, the function name (constructor) and class name should match`
 
+## Prefer to start function definition argument lists with the non-defaultable values
+
+```
+# Good
+Transmogrify <- function(
+  x,
+  y = 42
+)
+
+# Bad
+Transmogrify <- function(
+  x = 314,
+  y
+)
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Function definitions should first list arguments without default values, followed by those with default values.`
+
+
+
+## Prefer to optionally use line breaks in function definitions between assignments only
+
+```
+# Good
+Transmogrify <- function(
+  x = 314,
+  y = 42
+)
+
+# Good
+Transmogrify <- function(x = 314, y = 42)
+
+# Bad
+Transmogrify <- function(x 
+  = 314, y = 42)
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `In both function definitions and function calls, multiple arguments per line are allowed; line breaks are only allowed between assignments.`
+
+## Prefer to optionally use line breaks in function calls between assignments only
+
+```
+# Good
+Transmogrify(
+  x = 314,
+  y = 42
+)
+
+# Good
+Transmogrify(x = 314, y = 42)
+
+# Bad
+Transmogrify(x 
+  = 314, y = 42)
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `In both function definitions and function calls, multiple arguments per line are allowed; line breaks are only allowed between assignments.`
+
+
+
+
+
+
+## Prefer to describe a function in comments in the line(s) directly below the function definition
+
+These comments may consist of:
+
+ * a one-sentence description of the function
+ * a list of the function's arguments, denoted by Args:, with a description of each (including the data type)
+ * and a description of the return value, denoted by Returns:
+
+The comments should be descriptive enough that a caller can use the function without reading any of the function's code.
+
+```
+SumFloats <- function(x) {
+  # Calculates the sum of a vector of floats
+  # Args: x: a vector containing zero or more floating point values
+  # Returns: the sum of the vector as a floating point
+}
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Functions should contain a comments section immediately below the function definition line. These comments should consist of a one-sentence description of the function; a list of the function's arguments, denoted by Args:, with a description of each (including the data type); and a description of the return value, denoted by Returns:. The comments should be descriptive enough that a caller can use the function without reading any of the function's code.`
+
+
+
+          
+
+
 # Operator use
 
 ## Prefer using `<-` over `=` for assignment.
@@ -529,6 +625,16 @@ See also 'prefer naming unit test files ending in `_test.R`'
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Unit tests should go in a separate file named originalfilename_test.R.`
 
+## Prefer to let your unit tests serve as example function calls
+
+```
+[Example]
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Ideally, unit tests should serve as sample function calls (for shared library routines).`
+
 ## Prefer to use a consistent style for TODOs
 
 For example:
@@ -546,105 +652,3 @@ TODO(richelbilderbeek): Check if this really works
 ### References
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use a consistent style for TODOs throughout your code. TODO(username): Explicit description of action to be taken`
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Summary: R Style Rules
-
-    
-      
-      Function Definitions and Calls
-       Function Documentation
-       Example Function
-       TODO Style: TODO(username)
-    
-
-
-
-
-     Organization 
-          
-          
-
-        
-Function Definitions and
-          Calls
-          
-            Function definitions should first list arguments without default
-            values, followed by those with default values.
-          
-          
-            In both function definitions and function calls, multiple
-            arguments per line are allowed; line breaks are only allowed
-            between assignments.
-            
-GOOD:
-          
-PredictCTR <- function(query, property, num.days,
-                       show.plot = TRUE)
-
-           BAD:
-PredictCTR <- function(query, property, num.days, show.plot =
-                       TRUE)
-
-          
- Ideally, unit tests should serve as sample function calls (for
-            shared library routines).
-          
-        Function Documentation
-           Functions should contain a comments section immediately below
-            the function definition line. These comments should consist of a
-            one-sentence description of the function; a list of the function's
-            arguments, denoted by Args:, with a description of
-            each (including the data type); and a description of the return
-            value, denoted by Returns:. The comments should be
-            descriptive enough that a caller can use the function without
-            reading any of the function's code.
-          
-
-        Example Function
-
-CalculateSampleCovariance <- function(x, y, verbose = TRUE) {
-  # Computes the sample covariance between two vectors.
-  #
-  # Args:
-  #   x: One of two vectors whose sample covariance is to be calculated.
-  #   y: The other vector. x and y must have the same length, greater than one,
-  #      with no missing values.
-  #   verbose: If TRUE, prints sample covariance; if not, not. Default is TRUE.
-  #
-  # Returns:
-  #   The sample covariance between x and y.
-  n <- length(x)
-  # Error handling
-  if (n <= 1 || n != length(y)) {
-    stop("Arguments x and y have different lengths: ",
-         length(x), " and ", length(y), ".")
-  }
-  if (TRUE %in% is.na(x) || TRUE %in% is.na(y)) {
-    stop(" Arguments x and y must not have missing values.")
-  }
-  covariance <- var(x, y)
-  if (verbose)
-    cat("Covariance = ", round(covariance, 4), ".\n", sep = "")
-  return(covariance)
-}
-
-
