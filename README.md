@@ -50,20 +50,32 @@ rep(x=314, times=42)     # Okay
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place spaces around all binary operators (=, +, -, <-, etc.). Exception: Spaces around ='s are optional when passing parameters in a function call.`
 
-            
+## Avoid placing spaces around code in parentheses or square brackets
 
+```
+if (debug)   # Good
+if ( debug ) # Bad
+if (debug )  # Bad
+if ( debug)  # Bad
 
+x[1]   #Good
+x[ 1 ] #Bad
+x[1 ]  #Bad
+x[ 1]  #Bad
+```
 
+### Exception
 
+Always place a space after a comma:
 
+```
+x[1, ] #Good
+x[1,]  #Bad
+```
 
+### References
 
-
-
-
-
-
-
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Do not place spaces around code in parentheses or square brackets. Exception:  Always place a space after a comma.`
 
 ## Prefer indenting with two spaces
 
@@ -78,13 +90,22 @@ if (x == 42) {
 When a line break occurs inside parentheses, 
 align the wrapped line with the first character inside the parenthesis.
 
+Extra spacing is okay if it improves alignment of equals signs `=` or arrows `<-`.
+
 ```
-[Example here]
+plot(
+  x    = xs,
+  y    = ys,
+  xlab = "X",
+  ylab = "Y",
+  main = "Title"
+)
 ```
 
 ### References
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces. Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.`
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Extra spacing (i.e., more than one space in a row) is okay if it improves alignment of equals signs or arrows (<-).`
 
 ## Avoid using tabs
 
@@ -121,7 +142,124 @@ print ("Hello") #Bad
 ### References
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place a space before left parenthesis, except in a function call.`
-          
+
+
+
+
+
+
+## Prefer putting an opening curly brace at the end of a line. Prefer to put a closing curly brace on its own line
+
+```
+# GOOD
+if (x == 42) {
+  # ...
+}
+
+# BAD
+if (x == 42)
+{
+  # ...
+}
+
+# BAD
+if (x == 42)
+  {
+  # ...
+  }
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `An opening curly brace should never go on its own line; a closing curly brace should always go on its own line.`
+
+
+
+
+## Be consistent in ommitting curly braces when they can be ommitted
+
+You may omit curly braces when a block consists of a single statement:
+
+```
+# Good: keeping the curly braces
+if (x == 42) {
+  print("OK")
+}
+
+if (y == 314) {
+  print("OK")
+}
+
+# Good: ommitting the curly braces
+if (x == 42) 
+  print("OK")
+
+if (y == 314) 
+  print("OK")
+
+# Bad: inconsistency in ommitting the curly braces
+if (x == 42) 
+  print("OK")
+
+if (y == 314) {
+  print("OK")
+}
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `You may omit curly braces when a block consists of a single statement; however, you must consistently either use or not use curly braces for single statement blocks.`
+
+## Prefer to begin the body of a block on a new line
+
+```
+# OK
+if (x == 42) {
+  print("OK")
+}
+
+# Bad?
+if (x == 42) { print("Bad") }
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Always begin the body of a block on a new line.`
+
+## Prefer to surround `else` with braces
+
+```
+# OK
+if (x == 42) {
+  # ...
+} else {
+  # ...
+}
+
+
+# Bad
+if (x == 42) {
+  # ...
+} 
+else {
+  # ...
+}
+
+# Bad
+if (x == 42)
+  # ...
+else
+  # ...
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Surround else with braces. An else statement should always be surrounded on the same line by curly braces.`
+
+
+
+
+
 ## When modifying other people's code, follow their coding standard
 
 ```
@@ -269,12 +407,28 @@ x <- 42; # Bad
 
 ## Prefer meaningful files names ending in  `.R`
 
- * Good filames: `predict_ad_revenue.R`
+ * Good filenames: `predict_ad_revenue.R`
  * Bad filenames: `predict_ad_revenue.r`,`foo.R`
 
 ### References
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `File names should end in .R and, of course, be meaningful`
+
+## Prefer naming unit test files ending in `_test.R`
+
+ * Good filenames: `predict_ad_revenue_test.R`
+ * Bad filames: `test_predict_ad_revenue.R`
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Unit tests should go in a separate file named originalfilename_test.R.`
+
+
+
+
+          
+
+
 
 # Function use
 
@@ -303,7 +457,59 @@ x <- 42; # Bad
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `The possibilities for creating errors when using attach are numerous. Avoid it.`
 
-# Error handling
+# Miscellaneous
+
+
+
+## Be consistent in the ordering of a file
+
+An example ordering:
+ * Copyright statement comment 
+ * Author comment
+ * File description comment, including purpose of program, inputs, and outputs
+ * `source()` and `library()` statements
+ * Function definitions
+ * Executed statements, if applicable, for example `print` and `plot`
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `If everyone uses the same general ordering, we'll be able to read and understand each other's scripts faster and more easily.`
+
+
+
+## Prefer to add comments to your code
+
+```
+# Determine if expensive calculation can be avoided
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Comment your code`
+
+## Prefer to start an entire-line-comment with `#` and one space
+
+```
+# Determine if expensive calculation can be avoided
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Entire commented lines should begin with # and one space.`
+
+
+
+## For code directly after code, add two spaces, `#` and then one space
+
+```
+if (x == 42) {  # Are we lucky?
+  # ...
+}
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Short comments can be placed after code preceded by two spaces, #, and then one space.`
 
 ## Errors should be raised using stop()
 
@@ -314,6 +520,39 @@ if (x < 0) stop()
 ### References
 
 * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Errors should be raised using stop()`
+
+## Prefer to put unit tests in seperate files
+
+See also 'prefer naming unit test files ending in `_test.R`'
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Unit tests should go in a separate file named originalfilename_test.R.`
+
+## Prefer to use a consistent style for TODOs
+
+For example:
+
+```
+TODO([username]): [Explicit description of action to be taken]
+```
+
+Like:
+
+```
+TODO(richelbilderbeek): Check if this really works
+```
+
+### References
+
+* [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use a consistent style for TODOs throughout your code. TODO(username): Explicit description of action to be taken`
+
+
+
+
+
+
+
 
 
 
@@ -331,16 +570,6 @@ Summary: R Style Rules
 
     
       
-      Curly Braces: first on same line, last on
-        own line
-      else: Surround else with braces 
-      Assignment: use <-, not
-        =
-      Semicolons: don't use them
-       General Layout and Ordering
-       Commenting Guidelines: all comments begin
-        with # followed by a space; inline comments need two
-        spaces before the #
       Function Definitions and Calls
        Function Documentation
        Example Function
@@ -350,148 +579,9 @@ Summary: R Style Rules
 
 
 
-
-          
-          
-
-          
-
-          
-          
-            Extra spacing (i.e., more than one space in a row) is okay if it
-            improves alignment of equals signs or arrows (<-).
-          
-plot(x    = x.coord,
-     y    = data.mat[, MakeColName(metric, ptiles[1], "roiOpt")],
-     ylim = ylim,
-     xlab = "dates",
-     ylab = metric,
-     main = (paste(metric, " for 3 samples ", sep = "")))
-
-          
-
-            Do not place spaces around code in parentheses or square brackets.
-            
- Exception:  Always place a space after a comma.
-          
-          
-            GOOD:if (debug)
-x[1, ]
-          
-
-            BAD:if ( debug )  # No spaces around debug
-x[1,]  # Needs a space after the comma 
-
-          
-Curly Braces
-    
-            An opening curly brace should never go on its own line; a closing
-            curly brace should always go on its own line.  You may omit curly
-            braces when a block consists of a single statement; however, you
-            must consistently either use or not use curly braces for
-            single statement blocks.
-          
-          
-if (is.null(ylim)) {
-  ylim <- c(0, 0.06)
-}
-          
-
-            xor (but not both)
-          
-          
-if (is.null(ylim))
-  ylim <- c(0, 0.06)
-          
-
-            Always begin the body of a block on a new line.
-          
-          
-            BAD:
-            
- if (is.null(ylim))
-              ylim <- c(0, 0.06)
-            
- if (is.null(ylim))
-              {ylim <- c(0, 0.06)} 
-          
-
-          Surround else with braces
-    
-            An else statement should always be surrounded on the
-            same line by curly braces.
-          
-if (condition) {
-  one or more lines
-} else {
-  one or more lines
-}
-
-          
-
-            BAD:
-
-          
-          
-if (condition) {
-  one or more lines
-}
-else {
-  one or more lines
-}
-
-          
-
-            BAD:
-
-          
-          
-if (condition)
-  one line
-else
-  one line
-
-
-        
-          
-          
-
-
      Organization 
-        General Layout and Ordering
-          
-            If everyone uses the same general ordering, we'll be able to
-            read and understand each other's scripts faster and more easily.
           
           
-            Copyright statement comment 
-            Author comment
-            File description comment, including purpose of
-              program, inputs, and outputs
-            source() and library() statements
-            Function definitions
-            Executed statements, if applicable (e.g.,
-               print, plot)
-          
-          
-            Unit tests should go in a separate file named
-            originalfilename_test.R.
-          
-        Commenting Guidelines
-          
-            Comment your code. Entire commented lines should begin with
-            # and one space.
-          
-          
-            Short comments can be placed after code preceded by two spaces,
-            #, and then one space.
-          
-# Create histogram of frequency of campaigns by pct budget spent.
-hist(df$pct.spent,
-     breaks = "scott",  # method for choosing number of buckets
-     main   = "Histogram: fraction budget spent by campaignid",
-     xlab   = "Fraction of budget spent",
-     ylab   = "Frequency (count of campaignids)")
 
         
 Function Definitions and
@@ -557,12 +647,4 @@ CalculateSampleCovariance <- function(x, y, verbose = TRUE) {
   return(covariance)
 }
 
-
-TODO Style
-
-
-  Use a consistent style for TODOs throughout your code.
-  
-TODO(username): Explicit description of action to
-    be taken
 
