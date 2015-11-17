@@ -1,6 +1,6 @@
 # R-CodingStandard
 
-Coding standard for R, combining:
+A coding standard for R that combines:
 
  * The book 'Advanced R' by Hadley Wickham, CRC Press, 2014
  * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)
@@ -9,7 +9,9 @@ Coding standard for R, combining:
  * The document 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf)
  * The GNU coding standards, by Free Software Foundation, Inc., http://www.gnu.org/prep/standards
 
+This coding standard does not say what to do. It does inventorise what other references tell what to do. The reader is free to weigh these references after his/her taste.
 
+New references are always welcome. Feel free to add an Issue or a Pull Request.
 
 
 
