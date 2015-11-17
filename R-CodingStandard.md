@@ -25,6 +25,14 @@ Not all things are caught in a coding standard.
 
  * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use common sense and BE CONSISTENT.`
 
+## G.2.5: Consider using formatR for formatting your code
+
+It delivers a consistent style. It does not always work.
+
+### References
+
+ * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `Try formatR::tidy.source()`
+
 ## G.3: Avoid lines longer than 80 characters
 
 ```
@@ -88,7 +96,7 @@ Justifications for an S4 object would be:
 
 # WS: Whitespace
 
-## WS.1: Prefer placing spaces around all binary operators [1,2]
+## WS.1: Prefer placing spaces around all binary operators [1-3]
 
 ```
 x <- 42
@@ -102,18 +110,21 @@ if (a <= b) print("Less or equal")
 if (a > b) print("Greater")
 if (a >= b) print("Greater or equal")
 
-Show <- function(s = "Hello World") { # Note the spaces around the =
+sub %in% superset  # Is a subset with a superset?
+m %*% n  # Matrix multiplication
+
+Show <- function(s = "Hello World") {  # Note the spaces around the =
    # ...
 }
 ```
 
 ### Exception
 
-Spaces around `=`s are preferred [2] or optional [1] when passing parameters in a function call.
+Spaces around `=`s are preferred [2,3] or optional [1,4] when passing parameters in a function call.
 
 ```
-rep(x = 314, times = 42) # [1] Good [2] Good
-rep(x=314, times=42)     # [1] Okay [2] Bad
+rep(x = 314, times = 42) # [1,2,3,4] Good
+rep(x=314, times=42)     # [1,4] Okay [2] Bad
 ```
 
 
@@ -121,6 +132,9 @@ rep(x=314, times=42)     # [1] Okay [2] Bad
 
  * [1][Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place spaces around all binary operators (=, +, -, <-, etc.). Exception: Spaces around ='s are optional when passing parameters in a function call.`
  * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.2.1: `Place spaces around all infix operators (=, +, -, <-, etc.). The same rule applies when using = in function calls. Always put a space after a comma, and never before (just like in regular English).`
+ * [3] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] 1. Insert spaces before and after a) mathematical symbols like "=", "<-", "<", "*", "+" b) R binary operations like "%*%", "%o%", and "%in%"`
+ * [4] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `Is there an "argument exception" to the space rule for equal signs? [...] Spaces may sometimes be omitted in an effort to keep code on one line. Especially where publishers are concerned about the use of scarce paper`
+
 
 ## WS.2: Avoid placing spaces around code in parentheses or square brackets
 
@@ -149,20 +163,31 @@ x[1,]  #Bad
 
  * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Do not place spaces around code in parentheses or square brackets. Exception:  Always place a space after a comma.`
 
-## WS.3: Prefer indenting with two spaces
+## WS.2.5: Use indentation to improve readability [1,2]
+
+### References
+
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces. Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.`
+ * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.1 (SEA 1.0). Indentation of code sections is required`
+
+## WS.3: Prefer indenting with a consisent amount of spaces
+
+The amount varies between two [1] and four [3] spaces.
 
 ```
-if (x == 42) {
-  print("Yes!")
+if (x == 42) { 
+  print("Yes!")  # [1] Good [3] Bad
+}
+
+if (x == 42) { 
+    print("Yes!")  # [1] Bad [3] Good
 }
 ```
 
 ### Exception
 
-When a line break occurs inside parentheses, 
-align the wrapped line with the first character inside the parenthesis.
-
-Extra spacing is okay if it improves alignment of equals signs `=` or arrows `<-`.
+Extra spacing is okay if it improves readability 
+due to the alignment of equals signs `=` or arrows `<-` [2].
 
 ```
 plot(
@@ -176,10 +201,11 @@ plot(
 
 ### References
 
- * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces. Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.`
- * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Extra spacing (i.e., more than one space in a row) is okay if it improves alignment of equals signs or arrows (<-).`
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces. Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.`
+ * [2] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Extra spacing (i.e., more than one space in a row) is okay if it improves alignment of equals signs or arrows (<-).`
+ * [3] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.1 (SEA 1.0). Indentation of code sections is required`
 
-## WS.4: Avoid using tabs
+## WS.4: Avoid using tabs [1,2]
 
 ```
 [Example here]
@@ -187,33 +213,106 @@ plot(
 
 ### References
 
- * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces.`
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces.`
+ * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.1 (SEA 1.0). Indentation of code sections is required. This is explicitly spelled out in the R documentation. No tabs!`
 
-## WS.5: Avoid placing a space before a comma. Prefer to place a space after a comma
+## WS.5: Avoid placing a space before a comma [1]. Prefer to place a space after a comma [1,2]
 
 ```
-t <- sum(x[, 1]) # Good
-t <- sum(x[1, ]) # Good
-t <- sum(x[,1]) # Bad
-t <- sum(x[1,]) # Bad
+t <- sum(x[, 1]) # Good [1,2]
+t <- sum(x[1, ]) # Good [1,2]
+t <- sum(x[,1]) # Bad [1]
+t <- sum(x[1,]) # Bad [1]
 ```
 
 ### References
 
- * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Do not place a space before a comma, but always place one after a comma.`
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Do not place a space before a comma, but always place one after a comma.`
+ * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] 2. Put one space after commas`
            
-## WS.6: Prefer placing a space before a left parenthesis, except when calling a function
+## WS.6: Prefer placing a space before a left parenthesis [1], except when calling a function [1]
 
 ```
-if (debug) # Good
-if(debug)  # Bad
-print("Hello")  #Good
-print ("Hello") #Bad
+if (debug) # Good [1,2]
+if(debug)  # Bad [1,2]
+print("Hello")  #Good [1]
+print ("Hello") #Bad [1]
 ```
 
 ### References
 
- * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place a space before left parenthesis, except in a function call.`
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Place a space before left parenthesis, except in a function call.`
+ * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] For me, that settles the question. For R code, as in C, "if" and "for" should be treated as keywords, and there would be a space after them, as in "if (x < 7)"`
+
+## WS.6.5: Avoid putting extra spaces inside parentheses
+
+```
+if (debug)  # Good [1]
+if ( debug )  # Bad [1]
+print("Hello")  #Good [1]
+print( "Hello" )  #Bad [1]
+```
+
+### References
+
+ * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] 3. Do not insert "extra spaces" inside parentheses`
+
+
+## WS.7: Prefer placing a space before the opening squiggly brace [1]
+
+```
+if (debug) {  # OK [1]
+if (debug){  # Bad [1]
+```
+
+### References
+
+ * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] 3. Insert one space before the opening squiggly braces "{"`
+
+## WS.8: Prefer placing a space after a closing parenthesis [1] and closing squiggly brace [1]
+
+```
+if (debug) {  # OK: space after ")" [1]
+  # ...
+} else { # OK: space after "}" [1]
+  # ...
+}
+```
+
+### References
+
+ * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] 4. Put one space after the closing parenthesis ")" and the closing squiggly brace "}"`
+
+
+
+
+## WS.9: Avoid placing a space between a function name and its opening parameters [1]
+
+```
+x <- c(1,2)  # Good
+x <- c (1,2)  # Bad
+```
+
+### References
+
+ * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] 1. Do not insert spaces between function names and their opening parenthesis`
+
+## WS.10: Prefer to placing a space after an `if` or `for` statement [1]
+
+```
+if (x == 42) # Good [1]
+if(x == 42) # Bad [1]
+for (i in v) # Good [1]
+for(i in v) # Bad [1]
+```
+
+### References
+
+ * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.3 (SEA .98). Blank spaces around symbols are required. [...] For me, that settles the question. For R code, as in C, "if" and "for" should be treated as keywords, and there would be a space after them, as in "if (x < 7)"`
+
+
+
+
 
 # BR: Braces
 
@@ -295,7 +394,7 @@ if (x == 42) { print("Bad") }
 
  * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Always begin the body of a block on a new line.`
 
-## BR.4: Prefer to surround `else` with braces
+## BR.4: Prefer to surround `else` with braces [1,2]
 
 ```
 # OK
@@ -323,7 +422,8 @@ else
 
 ### References
 
- * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Surround else with braces. An else statement should always be surrounded on the same line by curly braces.`
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Surround else with braces. An else statement should always be surrounded on the same line by curly braces.`
+ * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.4 (SEA .70) The "} else {" policy`
 
 # I: Identifiers
 
@@ -372,20 +472,29 @@ k_pi <- 3.14  # [1] Bad  [2] Unknown
  * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
 
 
-## I.4: Prefer naming functions in CamelCase [1] or lower_case_with_underscores [2]
+## I.4: Prefer naming functions in a consistent way
 
-Here, the advice disagrees:
+Either:
+
+ * CamelCase (first letter upper case) [1] 
+ * camelCase (first letter lower case) [3] 
+ * lower_case_with_underscores [2]
+
 
 ```
-CalculateVariance  # [1] Good [2] Bad
-calculateVariance  # [1] Bad  [2] Bad
-calculate_variance # [1] Bad  [2] Good
+CalculateVariance  # [1] Good [2,3] Bad
+calculateVariance  # [3] Good [1,2] Bad
+calculate_variance # [2] Good [1,3] Bad  
+calculate.variance # [1,2,3] Bad
 ```
 
 ### References
 
  * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `function names have initial capital letters and no dots`
  * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
+ * [3] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `4.2 (.65 SEA) Use periods to indicate classes, otherwise don't use periods in function names. Instead, use camel case to name functions`
+
+
 
 ## I.5: Prefer the first word of a function being a verb
 
@@ -407,6 +516,18 @@ When creating a class object, the function name (constructor) and class name sho
  * [3] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
 
 # FU: Functions
+
+## FU.0.5: Avoid naming function the same as those already present in R [1]
+
+```
+c <- function(x)  #Bad, c is already a common R function
+Concatenate <- function(x)  #Good, this function name does not exist
+```
+
+### References
+
+ * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `4.1 (SEA .98) Avoid using names that are already in R, especially common ones`
+
 
 ## FU.1: Prefer to start function definition argument lists with the non-defaultable values
 
@@ -532,7 +653,7 @@ storage.mode(x)   # Bad
 
 # O: Operator use
 
-## O.1: Prefer using `<-` over `=` for assignment.
+## O.1: Prefer using `<-` over `=` for assignment [1,2]
           
 ```            
 x <- 42 # Good
@@ -541,7 +662,8 @@ x = 42  # Bad
 
 ### References
 
- * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use <-, not =, for assignment`
+ * [1] [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml): `Use <-, not =, for assignment`
+ * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf), `3.2 (SEA .95). Use "<-" not "=" for assignments`
 
 ## O.2: Avoid using semicolons `;`
           
