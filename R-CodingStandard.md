@@ -8,11 +8,18 @@ A coding standard for R that combines:
  * The document 'Rtips.  Revival 2014!' by Paul E. Johnson, March 24, 2014, [PDF](http://pj.freefaculty.org/R/Rtips.pdf)
  * The document 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf)
  * The GNU coding standards, by Free Software Foundation, Inc., http://www.gnu.org/prep/standards
+ * The C++ Core Guidelines, https://github.com/isocpp/CppCoreGuidelines
+
+This coding standard is heavily influenced by The C++ Core Guidelines, `https://github.com/isocpp/CppCoreGuidelines`, in style.
 
 This coding standard does not say what to do. It does inventorise what other references tell what to do. The reader is free to weigh these references after his/her taste.
 
-New references are always welcome. Feel free to add an Issue or a Pull Request.
+Because I do want to have a referenced personal preference, I sometimes add references to
+the C++ Core Guidelines. I consider this a usefull references, as I respect the
+main authors of the C++ Core Guidelines a lot, and I am an avid C++ user. But
+again, `the reader is free to weigh these references after his/her taste`.
 
+New references are always welcome. Feel free to add an Issue or a Pull Request.
 
 
 
@@ -729,13 +736,13 @@ Either:
 
  * CamelCase (first letter upper case) [1] 
  * camelCase (first letter lower case) [3] 
- * lower_case_with_underscores [2]
+ * lower_case_with_underscores [2,4]
 
 
 ```
-CalculateVariance  # Good [1] Bad [2,3]
-calculateVariance  # Good [3] Bad [1,2]
-calculate_variance  # Good [2] Bad [1,3]
+CalculateVariance  # Good [1] Bad [2,3,4]
+calculateVariance  # Good [3] Bad [1,2,4]
+calculate_variance  # Good [2,4] Bad [1,3]
 calculate.variance  # Bad [1,2,3] 
 ```
 
@@ -744,6 +751,7 @@ calculate.variance  # Bad [1,2,3]
  * [1] Google's R Style Guide: `function names have initial capital letters and no dots`
  * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.2: `Variables and function names should be lowercase. Use an underscore to seperate words within a name. Generally, variable names should be nouns and function names should be verbs. Strive for names that are concise and meaningful`
  * [3] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `4.2 (.65 SEA) Use periods to indicate classes, otherwise don't use periods in function names. Instead, use camel case to name functions`
+ * [4] [C++ Core Guidelines](https://github.com/isocpp/CppCoreGuidelines). `NL.10: Avoid CamelCase`
 
 
 
