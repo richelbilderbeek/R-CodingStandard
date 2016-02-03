@@ -602,9 +602,8 @@ According to [3], `&` *is* a logical and (page 19), and `&&` is described as an 
 
 Personally, I (richelbilderbeek) follow the C and C++ coding standards here, where `&` is a bitwise AND and `&&` is a logical AND.
 
-Note that [3] argues the contrary of this advice and even wonders on the use of `&&`.
-
-If you have referenced advice, please let me (richelbilderbeek) know.
+Note that [3] argues the contrary of this advice and even wonders on the use of `&&` for doing 
+conditional *vector* operations, which is something else this advice is about.
 
 ### References
 
