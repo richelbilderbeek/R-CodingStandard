@@ -600,7 +600,27 @@ if (x == 42 && y == 42) {
 
 According to [3], `&` *is* a logical and (page 19), and `&&` is described as an `AND with IF`.
 
-Personally, I (richelbilderbeek) follow the C and C++ coding standards here, where `&` is a bitwise AND and `&&` is a logical AND.
+The C and C++ languages call `&` a bitwise AND, where `&&` is called a logical AND. In those languages,
+`&&` is preferred as it invokes a short-circuit evaluation: `if (a && b)` will terminate directly if `a` is false,
+where in `if (a & b)` both `a` and `b` are evaluated even if `a` is false:
+
+```
+say_hello <- function() 
+{
+  print("Hello")
+  return (1)
+}
+
+# say_hello should not be called
+# operator& evaluates all arguments, even if the first one is false
+# operator&& evaluates the arguments until it founds a false (and thus can never be true anymore)
+if (1 + 1 == 3  & say_hello()) { }
+if (1 + 1 == 3 && say_hello()) { }
+
+# Also for more arguments
+if (1 + 1 == 3  & 1 + 1 == 4  & say_hello()) { }
+if (1 + 1 == 3 && 1 + 1 == 4 && say_hello()) { }
+```
 
 Note that [3] argues the contrary of this advice and even wonders on the use of `&&` for doing 
 conditional *vector* operations, which is something else this advice is about.
