@@ -590,6 +590,27 @@ x <- 42;  # Bad
 
  * [1] Google's R Style Guide: `Do not terminate your lines with semicolons or use semicolons to put more than one command on the same line`
 
+## O.3: Prefer using `&&` over `&` in an if-statement [1]
+          
+```            
+if (x == 42 && y == 42) {
+  print("OK")
+}
+```
+
+According to [3], `&` *is* a logical and (page 19), and `&&` is described as an `AND with IF`.
+
+Personally, I (richelbilderbeek) follow the C and C++ coding standards here, where `&` is a bitwise AND and `&&` is a logical AND.
+
+Note that [3] argues the contrary of this advice and even wonders on the use of `&&`.
+
+If you have referenced advice, please let me (richelbilderbeek) know.
+
+### References
+
+ * [1] Style Guide from Hadley Wickham, http://r-pkgs.had.co.nz/style.html
+ * [2] The R Book, 2nd Edition, Michael j. Crawley
+ * [3] Blog from csgillespie: http://www.r-bloggers.com/logical-operators-in-r/
 
 
 
