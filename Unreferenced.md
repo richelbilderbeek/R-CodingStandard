@@ -20,13 +20,6 @@ Unreferenced advice. I do add the name of the person that suggested it.
 
 # FI: File
 
-## FI.?: Every file should be self-sufficient [1]
-
-A file that uses libraries and source files, should call `library` and `source` to add these.
-
-Otherwise, the caller of the function gets the responsibility of doing this him/herself.
-
-[1] Suggested by Richel Bilderbeek
 
 # CO: Comments
 
@@ -35,3 +28,4 @@ Otherwise, the caller of the function gets the responsibility of doing this him/
 # TE: Testing
 
 # TO: TODO's
+
