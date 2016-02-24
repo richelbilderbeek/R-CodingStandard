@@ -5,6 +5,7 @@ A coding standard for R that combines:
  * The book 'Advanced R' by Hadley Wickham, CRC Press, 2014
  * The book 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015
  * [Google's R Style Guide](https://google.github.io/styleguide/Rguide.xml)
+ * The book 'The R inferno' by Patrick Burns, 2011
  * The document 'Rchaeology: Idioms of R Programming' by Paul E. Johnson, January 28, 2015, [PDF](http://pj.freefaculty.org/R/Rchaeology.pdf)
  * The document 'Rtips.  Revival 2014!' by Paul E. Johnson, March 24, 2014, [PDF](http://pj.freefaculty.org/R/Rtips.pdf)
  * The document 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, [PDF](https://cran.r-project.org/web/packages/rockchalk/vignettes/Rstyle.pdf)
@@ -666,7 +667,25 @@ else
 
 # O: Operator use
 
-## O.1: Prefer using `<-` over `=` for assignment [1-3]
+## O.1: Know that `<-` and `=` are different [1]
+
+The arrow operator (`<-`) is used to assign values to variables.
+The function parameter assign operator (`=`) is used to assign values to function parameters.
+
+```
+# Assign the value 42 to the variable x
+x <- 42
+
+# Repeat the value 42 ten times
+req(42, times = 10)
+```
+
+### References
+
+ * [1] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `Just because '&&' and '&' have similar purposes, don't go thinking that '==' and '=' are similar. Completely different.`
+
+
+## O.2: Prefer using `<-` over `=` for assignment [1-3]
           
 ```            
 x <- 42  # Good [1-3]
@@ -679,7 +698,7 @@ x = 42  # Bad [1-3]
  * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `3.2 (SEA .95). Use "<-" not "=" for assignments`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Assignment': `Use <-, not =, for assignments`
 
-## O.2: Avoid using semicolons `;` [1]
+## O.3: Avoid using semicolons `;` [1]
           
 ```            
 x <- 42  # Good
@@ -690,7 +709,20 @@ x <- 42;  # Bad
 
  * [1] Google's R Style Guide: `Do not terminate your lines with semicolons or use semicolons to put more than one command on the same line`
 
-## O.3: Prefer using `&&` over `&` in an if-statement [1]
+## O.4: Know that `&` and `&&` are different [1,4]
+
+The long form (`&&`) can do short-circuit evaluation: `if (a && b)` will terminate directly if `a` is false,
+where in `if (a & b)` both `a` and `b` are evaluated even if `a` is false:
+
+### References
+
+ * [1] Style Guide from Hadley Wickham, http://r-pkgs.had.co.nz/style.html
+ * [2] The R Book, 2nd Edition, Michael j. Crawley
+ * [3] Blog from csgillespie: http://www.r-bloggers.com/logical-operators-in-r/
+ * [4] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `This can be used to make sure it is safe to perform a test`
+
+
+## O.5: Prefer using `&&` over `&` in an if-statement [1,4]
           
 ```            
 if (x == 42 && y == 42) {
@@ -700,8 +732,7 @@ if (x == 42 && y == 42) {
 
 According to [3], `&` *is* a logical and (page 19), and `&&` is described as an `AND with IF`.
 
-The C and C++ languages call `&` a bitwise AND, where `&&` is called a logical AND. In those languages,
-`&&` is preferred as it invokes a short-circuit evaluation: `if (a && b)` will terminate directly if `a` is false,
+The long form (`&&`) can do short-circuit evaluation: `if (a && b)` will terminate directly if `a` is false,
 where in `if (a & b)` both `a` and `b` are evaluated even if `a` is false:
 
 ```
@@ -730,8 +761,23 @@ conditional *vector* operations, which is something else this advice is about.
  * [1] Style Guide from Hadley Wickham, http://r-pkgs.had.co.nz/style.html
  * [2] The R Book, 2nd Edition, Michael j. Crawley
  * [3] Blog from csgillespie: http://www.r-bloggers.com/logical-operators-in-r/
+ * [4] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `This can be used to make sure it is safe to perform a test`
 
+## O.6: Know that `=` and `==` are different [1]
 
+The long form (`==`) is used in an `if` statement.
+The short form (`==`) is used to assign values to function parameters
+
+```
+if (1 + 1 == 2) { print("one plus one equals two") }
+
+# Repeat the value 42 ten times
+req(42, times = 10)
+```
+
+### References
+
+ * [1] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `Just because '&&' and '&' have similar purposes, don't go thinking that '==' and '=' are similar. Completely different.`
 
 
 
