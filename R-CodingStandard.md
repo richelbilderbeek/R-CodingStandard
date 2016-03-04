@@ -106,11 +106,29 @@ lintr::lint_package()
  * [1] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Code Style': `The lintR package, by Jim Hester, checks for compliance with this style guide and lets you know if you've missed something`
 
 
+## G.7: Consider using `knitr` for demonstrating your code [1]
 
-## G.7: Prefer lines shorter than 80 characters [1-3]
+With `knitr` one can create documentation that demonstrates
+your code, called vignettes. 
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+
+
+
+## G.8: Prefer lines shorter than 80 characters [1-4]
+
+Prefer lines shorter than 80 characters, by, for example, wrapping them [1-4].
 
 ```
-[EXAMPLE HERE]
+#  BAD:
+#  Long line (imagine this being longer than 80 characters)
+
+#  Good:
+#  Shorter (imagine this being shorter than 80 characters)
+#  lines (imagine this being shorter than 80 characters)
+
 ```
 
 ### References
@@ -118,10 +136,11 @@ lintr::lint_package()
  * [1] Google's R Style Guide: `The maximum line length is 80 characters`
  * [2] The GNU coding standards: `Please keep the length of source lines to 79 characters or less, for maximum readability in the widest range of environments.`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Line length': `Strive to limit your code to 80 characters per line`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
 
 
 
-## G.8: When modifying other people's code, follow their coding standard [1-3]
+## G.9: When modifying other people's code, follow their coding standard [1-3]
 
 ```
 [Example here]
@@ -132,10 +151,21 @@ lintr::lint_package()
  * [1] Google's R Style Guide: `Use common sense and BE CONSISTENT. If you are editing code, take a few minutes to look at the code around you and determine its style. If others use spaces around their if clauses, you should, too. If their comments have little boxes of stars around them, make your comments have little boxes of stars around them, too. The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you are saying, rather than on how you are saying it. [...]. But local style is also important. If code you add to a file looks drastically different from the existing code around it, the discontinuity will throw readers out of their rhythm when they go to read it. Try to avoid this.`
  * [2] The GNU coding standards, by Free Software Foundation, Inc., http://www.gnu.org/prep/standards, `If you are contributing changes to an existing program, please follow the style of that program. `
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Code Style': `If you're working on someone else's code, don't impose your own style. Instead, read their style documentation and follow it as closely as possible`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
 
 
 
-## G.9: Do not put more than one command on the same line [1]
+
+## G.10: Refine and polish your code [1]
+
+Refine and polish your code [1]
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+
+
+## G.10: Do not put more than one command on the same line [1]
           
 ```            
 x <- 42; y <- 314  # Bad
@@ -151,7 +181,7 @@ y <- 314
 
 
 
-## G.10: Prefer using S3 over S4 [1]
+## G.11: Prefer using S3 over S4 [1]
 
 ```
 [Example here]
@@ -170,7 +200,7 @@ Justifications for an S4 object would be:
 
 
 
-## G.11: Avoid mixing S3 and S4 [1]
+## G.12: Avoid mixing S3 and S4 [1]
 
 ```
 [Example here]
@@ -182,11 +212,127 @@ Justifications for an S4 object would be:
 
 
 
+## G.13: Do read the documentation [1]
+
+Do read the documentation [1].
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 3: Do read the documentation`
+
+
+## G.14: Do learn from the masters [1]
+
+Do learn from the masters [1].
+
+Read source code from the masters:
+
+  * John Chambers
+  * Bill Venables
+  * Bill Dunlap
+  * Luke Tierney
+  * Brian Ripley
+  * Dirk Eddelbuettel
+  * Hadley Wickham
+
+Read source of packages:
+
+  * Must be the original source code, not the `?the_function` version
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 4: Do learn from the masters`
+
+
+## G.15: Do not copy and paste [1]
+
+Do not copy and paste [1]:
+
+ * Write functions instead 
+ * Break long functions into several smaller ones
+
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 5: Do not copy and paste`
+
+
+## G.16: Strive for clarity and simplicity [1]
+
+Strive for clarity and simplicity [1].
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 6: Strive for clarity and simplicity`
+
+
+## G.17: Test your code [1]
+
+Test your code [1].
+
+ * Carefully write (small) testing examples, for each function
+ * Consider adopting a package structure, as this has auto-texting of examples, unit tests built in, and the necessity to document your functions
+ * Use software tools for testing
+ * After testing, *maybe* optimizing
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 7: Test your code`
 
 
 
 
+## G.18: Maintain R code in Packages [1]
 
+Maintain R code in Packages [1].
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 8: Maintain R code in Packages`
+
+
+
+## G.19: Do source code management [1]
+
+Do source code management [1].
+
+For example, use GitHub.
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 9: Do source code management`
+
+
+
+## G.20: `Rscript` or `R CMD BATCH my_source.R` should always work [1]
+
+`Rscript` or `R CMD BATCH my_source.R` should always work [1].
+
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 10: 'Rscript' or 'R CMD BATCH my_source.R' should always work`
+
+
+## G.21: Use `TRUE` and `FALSE`, not `T` and `F` [1]
+
+Use `TRUE` and `FALSE`, not `T` and `F` [1].
+
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: 7. Use `TRUE` and `FALSE`, not `T` and `F`'
+
+
+## G.22: Learn about regular expressions [1]
+
+Learn about regular expressions [1].
+
+Tip: use `?regexp`.
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: 10. Learn about 'regular expressions': `?regexp`'
 
 
 
@@ -223,10 +369,10 @@ Show <- function(s = "Hello World") {  # Note the spaces around the =
 
 ### Exception
 
-Spaces around `=`s are preferred [2,3,5] or optional [1,4] when passing parameters in a function call.
+Spaces around `=`s are preferred [2,3,5,7] or optional [1,4] when passing parameters in a function call.
 
 ```
-rep(x = 314, times = 42)  # [1,2,3,4,5] Good
+rep(x = 314, times = 42)  # [1,2,3,4,5,7] Good
 rep(x=314, times=42)  # [1,4] Okay [2,5] Bad
 ```
 
@@ -249,6 +395,7 @@ base :: get # Bad [6]
  * [4] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `Is there an "argument exception" to the space rule for equal signs? [...] Spaces may sometimes be omitted in an effort to keep code on one line. Especially where publishers are concerned about the use of scarce paper`
  * [5] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Spacing': `Put spacing around all infix operators (=, +, -, <-, ett.). The same rule applies when using = in function calls`
  * [6] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Spacing': `There's a small exception to this rule: :, ::, and ::: don't need spaces around them.`
+ * [7] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
 
 
 ## WS.2: Avoid placing spaces around code in parentheses or square brackets [1-3]
@@ -282,7 +429,7 @@ x[1,]  #Bad [1-3]
 
 
 
-## WS.3: Use indentation to improve readability [1-3]
+## WS.3: Use indentation to improve readability [1-4]
 
 ```
 # Good [1-3]
@@ -300,6 +447,7 @@ message("X equals zero")
  * [1] Google's R Style Guide: `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces. Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.`
  * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `3.1 (SEA 1.0). Indentation of code sections is required`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Curly braces': `Always indent code inside curly braces`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
 
 ## WS.4: Prefer indenting with a consistent amount of spaces [1,3]
 
@@ -685,18 +833,22 @@ req(42, times = 10)
  * [1] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `Just because '&&' and '&' have similar purposes, don't go thinking that '==' and '=' are similar. Completely different.`
 
 
-## O.2: Prefer using `<-` over `=` for assignment [1-3]
+## O.2: Prefer using `<-` over `=` for assignment [1-4]
           
 ```            
-x <- 42  # Good [1-3]
-x = 42  # Bad [1-3]
+x <- 42  # Good [1-4]
+x = 42  # Bad [1-4]
 ```
+
+Tools like `lintr` and `formatr` will signal if you use
+the less preferred form of assignment.
 
 ### References
 
  * [1] Google's R Style Guide: `Use <-, not =, for assignment`
  * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `3.2 (SEA .95). Use "<-" not "=" for assignments`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Assignment': `Use <-, not =, for assignments`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
 
 ## O.3: Avoid using semicolons `;` [1]
           
@@ -709,7 +861,7 @@ x <- 42;  # Bad
 
  * [1] Google's R Style Guide: `Do not terminate your lines with semicolons or use semicolons to put more than one command on the same line`
 
-## O.4: Know that `&` and `&&` are different [1,4]
+## O.4: Know that `&` and `&&` are different [1,5]
 
 The long form (`&&`) can do short-circuit evaluation: `if (a && b)` will terminate directly if `a` is false,
 where in `if (a & b)` both `a` and `b` are evaluated even if `a` is false:
@@ -720,6 +872,7 @@ where in `if (a & b)` both `a` and `b` are evaluated even if `a` is false:
  * [2] The R Book, 2nd Edition, Michael j. Crawley
  * [3] Blog from csgillespie: http://www.r-bloggers.com/logical-operators-in-r/
  * [4] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `This can be used to make sure it is safe to perform a test`
+ * [5] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: Know the difference between `|` vs `||` and `&` and `&&` and inside `if (...)` almost always use `||` and `&&`'
 
 
 ## O.5: Prefer using `&&` over `&` in an if-statement [1,4]
@@ -762,6 +915,7 @@ conditional *vector* operations, which is something else this advice is about.
  * [2] The R Book, 2nd Edition, Michael j. Crawley
  * [3] Blog from csgillespie: http://www.r-bloggers.com/logical-operators-in-r/
  * [4] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `This can be used to make sure it is safe to perform a test`
+ * [5] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: Know the difference between `|` vs `||` and `&` and `&&` and inside `if (...)` almost always use `||` and `&&`'
 
 ## O.6: Know that `=` and `==` are different [1]
 
@@ -984,6 +1138,7 @@ When creating a class object, the function name (constructor) and class name sho
 
 
 
+
 # FU: Functions
 
 ## FU.1: Prefer short functions [1]
@@ -1184,15 +1339,24 @@ storage.mode(x)  # Bad [1]
 
 # FI: File
 
-## FI.1: Prefer meaningful files names ending in  `.R` [1]
+## FI.0: Prefer work with source files over using the terminal [1]
+
+Prefer work with source files over using the terminal.
+
+### References
+
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 1: Work with source files`
+
+
+## FI.1: Prefer meaningful files names ending in  `.R` [1,2]
 
  * Good filenames: `predict_ad_revenue.R`, `fit-models.R`
  * Bad filenames: `predict_ad_revenue.r`,`foo.R`, `utility-functions.R`
 
 ### References
 
- * Google's R Style Guide: `File names should end in .R and, of course, be meaningful`
- * Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.1: `Filenames should be meaningful and end in .R`
+ * [1] Google's R Style Guide: `File names should end in .R and, of course, be meaningful`
+ * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 5.1.1: `Filenames should be meaningful and end in .R`
 
 
 
@@ -1250,7 +1414,9 @@ An example ordering:
 
 # CO: Comments
 
-## CO.1: Prefer to add comments to your code [1,2]
+## CO.1: Prefer to add comments to your code [1-3]
+
+Do use comments copiously, about every 10 lines [3].
 
 ```
 # Determine if expensive calculation can be avoided
@@ -1260,6 +1426,7 @@ An example ordering:
 
  * [1] Google's R Style Guide: `Comment your code`
  * [2] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Commenting guidelines': `Comment your code`
+ * [3] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
 
 
 
@@ -1576,3 +1743,29 @@ A file that uses libraries and source files, should call `library` and `source` 
 This is a non-rule however, see the PA section.
 
 [1] Suggested by Richel Bilderbeek
+
+
+
+
+
+# Tips
+
+
+All from Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`:
+
+## Tips
+
+ * 1. Subsetting ("[]")
+    * Instead of `x[ind, ]` use `x[ind, , drop = FALSE]`
+ * 2. Not `x == NA` but `is.na(x)`
+ * 3. Use `1:n` when you know that n is positive
+ * 4. Do not grow objects, replace instead
+ * 5. Use `lapply()`, `sapply()`, sometimes preferable `vapply()`, `mapply()` (Apply to multiple argyuments) or sometimes the `replicate()` wrapper
+ * 6. Use `with(<d.frame>, ...)` and do not attach data frames
+ * 9. use `which.max()`
+ * 10. Learn about 'regular expressions': `?regexp`
+
+
+Easter egg:
+
+`Anybody ? there ???`
