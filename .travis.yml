@@ -1,3 +1,4 @@
+language: r
 pandoc_version: 1.16
 
 script:
