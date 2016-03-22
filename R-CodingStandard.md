@@ -13,7 +13,7 @@ A coding standard for R that combines:
  * Hadley Wickham's R style Guide: `http://r-pkgs.had.co.nz/style.html`
  * The GNU coding standards, by Free Software Foundation, Inc., http://www.gnu.org/prep/standards
  * The C++ Core Guidelines, https://github.com/isocpp/CppCoreGuidelines
- * The document 'Writing R functions' by Cosma Shalizi, http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf
+ * The document 'Writing R functions' by Cosma Shalizi, [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf)
 
 This coding standard does not say what to do. It does inventorise what other references tell what to do. The reader is free to weigh these references after his/her taste.
 
@@ -62,7 +62,7 @@ Read source of packages:
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 4: Do learn from the masters`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 4: Do learn from the masters`
 
 
 ## G.2: Do read the documentation [1,2]
@@ -71,8 +71,8 @@ Do read the documentation [1,2].
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 3: Do read the documentation`
- * [2] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.3: `RTFM`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 3: Do read the documentation`
+ * [2] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.3: `RTFM`
 
 
 ## G.3: Take a real programming class [1]
@@ -81,7 +81,7 @@ Take a real programming class [1]
 
 ### References
 
- * [1] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.1: `Take a real programming class`
+ * [1] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.1: `Take a real programming class`
 
 
 ## G.4: Strive for clarity [1,3] and simplicity [1,2]
@@ -91,10 +91,10 @@ and take the time to maintain this [4].
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 6: Strive for clarity and simplicity`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 6: Strive for clarity and simplicity`
  * [2] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Keep it simple`
  * [3] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Clever is good, but clear is better`
- * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
 
 
 ## G.5: Avoid writing the same thing twice [1,2]
@@ -107,9 +107,9 @@ Do not copy and paste [1,2]:
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 5: Do not copy and paste`
- * [2] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.6: `Avoid writing the same thing twice`
- * [3] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.5: `Break your code into many short, meaningful functions`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 5: Do not copy and paste`
+ * [2] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.6: `Avoid writing the same thing twice`
+ * [3] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.5: `Break your code into many short, meaningful functions`
 
 
 ## G.6: Maintain R code in Packages [1,2]
@@ -124,10 +124,10 @@ Maintain R code in Packages [1], as this
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 8: Maintain R code in Packages`
- * [2] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 7: Test your code`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 8: Maintain R code in Packages`
+ * [2] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 7: Test your code`
  * [3] 'Rchaeology: Idioms of R Programming' by Paul E. Johnson, January 28, 2015, `Make re-usable tools (rather than cutting and pasting_`
- * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
 
 
 ## G.7: Do source code management [1]
@@ -138,7 +138,7 @@ For example, use GitHub.
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 9: Do source code management`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 9: Do source code management`
 
 
 ## G.8: Build up the program gradually [1-2]
@@ -151,7 +151,7 @@ For example, use GitHub.
 
 ### References
 
- * [1] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.4: `Start from the beginning and break it down`
+ * [1] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.4: `Start from the beginning and break it down`
  * [2] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Build up the program from small, independently tested functions`
 
 
@@ -173,7 +173,6 @@ Stop tinkering once it works effectively [1]
  * [1] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Stop tinkering once it works effectively`
 
 
-
 ## G.11: Prefer lines shorter than 80 characters [1-4]
 
 Prefer lines shorter than 80 characters, by, for example, wrapping them [1-4].
@@ -193,9 +192,7 @@ Prefer lines shorter than 80 characters, by, for example, wrapping them [1-4].
  * [1] Google's R Style Guide: `The maximum line length is 80 characters`
  * [2] The GNU coding standards: `Please keep the length of source lines to 79 characters or less, for maximum readability in the widest range of environments.`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Line length': `Strive to limit your code to 80 characters per line`
- * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
-
-
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
 
 
 ## G.12: Do not put more than one command on the same line [1]
@@ -213,7 +210,6 @@ y <- 314
  * [1] Google's R Style Guide: `Do not terminate your lines with semicolons or use semicolons to put more than one command on the same line`
 
 
-
 ## G.13: Use `TRUE` and `FALSE`, not `T` and `F` [1]
 
 Use `TRUE` and `FALSE`, not `T` and `F` [1].
@@ -221,7 +217,7 @@ Use `TRUE` and `FALSE`, not `T` and `F` [1].
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: 7. Use `TRUE` and `FALSE`, not `T` and `F`'
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), 'Tips: 7. Use `TRUE` and `FALSE`, not `T` and `F`'
 
 
 ## G.14: `Rscript` or `R CMD BATCH my_source.R` should always work [1]
@@ -231,9 +227,7 @@ Use `TRUE` and `FALSE`, not `T` and `F` [1].
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 10: 'Rscript' or 'R CMD BATCH my_source.R' should always work`
-
-
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 10: 'Rscript' or 'R CMD BATCH my_source.R' should always work`
 
 
 ## G.15: Learn about regular expressions [1]
@@ -244,7 +238,7 @@ Tip: use `?regexp`.
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: 10. Learn about 'regular expressions': `?regexp`'
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), 'Tips: 10. Learn about 'regular expressions': `?regexp`'
 
 
 
@@ -278,14 +272,11 @@ Whatever you do, do it consistently.
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Code Style': `You don't have to use my style, but I strongly recommend that you use a consistent style and document it`
 
 
-
 ## CS.2: Use a coding standard [1]
 
 ## References
 
  * [1] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `6 Conclusion [...] Coding style is not about making things "work", is is about making them works in a way that is understood by the widest possible audience`
-
-
 
 
 ## CS.3: Prefer using common sense, over following a coding standard too rigorously [1]
@@ -295,7 +286,6 @@ Not all things are caught in a coding standard.
 ### References
 
  * [1] Google's R Style Guide: `Use common sense and BE CONSISTENT.`
-
 
 
 ## CS.4: `formatR` and `lintr` can help to follow a consistent style [1-3]
@@ -328,16 +318,14 @@ Both can be used to help follow a consistent style.
 
 ## CS.5: When modifying other people's code, follow their coding standard [1-3]
 
-```
-[Example here]
-```
+When modifying other people's code, follow their coding standard [1-3].
 
 ### References
 
  * [1] Google's R Style Guide: `Use common sense and BE CONSISTENT. If you are editing code, take a few minutes to look at the code around you and determine its style. If others use spaces around their if clauses, you should, too. If their comments have little boxes of stars around them, make your comments have little boxes of stars around them, too. The point of having style guidelines is to have a common vocabulary of coding so people can concentrate on what you are saying, rather than on how you are saying it. [...]. But local style is also important. If code you add to a file looks drastically different from the existing code around it, the discontinuity will throw readers out of their rhythm when they go to read it. Try to avoid this.`
  * [2] The GNU coding standards, by Free Software Foundation, Inc., http://www.gnu.org/prep/standards, `If you are contributing changes to an existing program, please follow the style of that program. `
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Code Style': `If you're working on someone else's code, don't impose your own style. Instead, read their style documentation and follow it as closely as possible`
- * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
 
 
 
@@ -401,7 +389,7 @@ base :: get # Bad [6]
  * [4] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `Is there an "argument exception" to the space rule for equal signs? [...] Spaces may sometimes be omitted in an effort to keep code on one line. Especially where publishers are concerned about the use of scarce paper`
  * [5] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Spacing': `Put spacing around all infix operators (=, +, -, <-, ett.). The same rule applies when using = in function calls`
  * [6] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Spacing': `There's a small exception to this rule: :, ::, and ::: don't need spaces around them.`
- * [7] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+ * [7] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
 
 
 ## WS.2: Avoid placing spaces around code in parentheses or square brackets [1-3]
@@ -453,7 +441,7 @@ message("X equals zero")
  * [1] Google's R Style Guide: `When indenting your code, use two spaces.  Never use tabs or mix tabs and spaces. Exception: When a line break occurs inside parentheses, align the wrapped line with the first character inside the parenthesis.`
  * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `3.1 (SEA 1.0). Indentation of code sections is required`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Curly braces': `Always indent code inside curly braces`
- * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
  * [5] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Use indents (tabs) to improve clarity of loops and if-statements`
 
 ## WS.4: Prefer indenting with a consistent amount of spaces [1,3]
@@ -855,7 +843,7 @@ the less preferred form of assignment.
  * [1] Google's R Style Guide: `Use <-, not =, for assignment`
  * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `3.2 (SEA .95). Use "<-" not "=" for assignments`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Assignment': `Use <-, not =, for assignments`
- * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
+ * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
 
 ## O.3: Avoid using semicolons `;` [1]
           
@@ -879,7 +867,7 @@ where in `if (a & b)` both `a` and `b` are evaluated even if `a` is false:
  * [2] The R Book, 2nd Edition, Michael j. Crawley
  * [3] Blog from csgillespie: http://www.r-bloggers.com/logical-operators-in-r/
  * [4] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `This can be used to make sure it is safe to perform a test`
- * [5] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: Know the difference between `|` vs `||` and `&` and `&&` and inside `if (...)` almost always use `||` and `&&`'
+ * [5] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), 'Tips: Know the difference between `|` vs `||` and `&` and `&&` and inside `if (...)` almost always use `||` and `&&`'
 
 
 ## O.5: Prefer using `&&` over `&` in an if-statement [1,4]
@@ -922,7 +910,7 @@ conditional *vector* operations, which is something else this advice is about.
  * [2] The R Book, 2nd Edition, Michael j. Crawley
  * [3] Blog from csgillespie: http://www.r-bloggers.com/logical-operators-in-r/
  * [4] The book 'The R inferno' by Patrick Burns, 2011. Chapter 8.2.17: `This can be used to make sure it is safe to perform a test`
- * [5] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, 'Tips: Know the difference between `|` vs `||` and `&` and `&&` and inside `if (...)` almost always use `||` and `&&`'
+ * [5] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), 'Tips: Know the difference between `|` vs `||` and `&` and `&&` and inside `if (...)` almost always use `||` and `&&`'
 
 ## O.6: Know that `=` and `==` are different [1]
 
@@ -969,7 +957,7 @@ Good variable names are:
 ### References
 
  * [1] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Object names': `Strive for names that are concise and meaningful (this is not easy!)`
- * [2] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.7: `Use meaningful names`
+ * [2] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.7: `Use meaningful names`
  * [3] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Use variable names and function names that are self-explanatory`
 
 
@@ -1168,7 +1156,7 @@ Good function names are:
 
 ### References
 
- * [1] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.7: `Use meaningful names`
+ * [1] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.7: `Use meaningful names`
  * [2] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Use variable names and function names that are self-explanatory`
 
 
@@ -1179,7 +1167,7 @@ Break your code into many short, meaningful functions [1].
 
 ### References
 
- * [1] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.5: `Break your code into many short, meaningful functions`
+ * [1] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.5: `Break your code into many short, meaningful functions`
 
 
 
@@ -1228,9 +1216,22 @@ Transmogrify <- function(
 
 ## FU.4: Check argument values [1]
 
+Use `stop` to terminate the function [1,2], when 
+the function arguments are incorrect.
+
+```
+f <- function(number_of_cats) {
+  if (number_of_cats < 0) {
+    stop("number_of_cats must be postive")
+  }
+  # Work on number_of_cats
+}
+```
+
 ### References
 
  * [1] 'Rchaeology: Idioms of R Programming' by Paul E. Johnson, January 28, 2015, `4. Function arguments. [...] 2. Check argument values`
+ * [2] Wickham, Hadley. Advanced R. CRC Press, 2014. Chapter 9, page 149: `Fatal errors are raised by 'stop' and force all execution to terminate. Errors are used when there is no way for a function to continue.`
 
 
 
@@ -1317,7 +1318,7 @@ Avoid iteration [1], although for-loops are not necessarily bad [2]
 
 ### References
 
- * [1] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.10: `Avoid iteration`
+ * [1] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.10: `Avoid iteration`
  * [2] 'Rchaeology: Idioms of R Programming' by Paul E. Johnson, January 28, 2015, `5 Do this, not that [...] One can write an lapply statement in one line, while a for loop can take 3 lines. The code is shorter, but won't necessarily run more quickly`
 
 
@@ -1435,7 +1436,7 @@ Prefer work with source files over using the terminal.
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 1: Work with source files`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 1: Work with source files`
 
 
 ## FI.1: Prefer meaningful files names ending in  `.R` [1,2]
@@ -1516,8 +1517,8 @@ Do use comments copiously [1-5], about every 10 lines [3].
 
  * [1] Google's R Style Guide: `Comment your code`
  * [2] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Commenting guidelines': `Comment your code`
- * [3] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 2: Keep R source well-readable and maintainable`
- * [4] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.2: `Comment your code`
+ * [3] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
+ * [4] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.2: `Comment your code`
  * [5] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Put plenty of comments in the code, using # for documentation`
 
 
@@ -1698,9 +1699,9 @@ Or, from [3]:
 
 ### References
 
- * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`, `Rule 7: Test your code`
+ * [1] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 7: Test your code`
  * [2] Michael J. Crawley, 'The R Book' (2nd Edition), 2013, Chapter 2.17: Programming tips: `Test each line as you go along, to make sure it does what you want it to do`
- * [3] Cosma Shalizi, 'Writing R functions', `http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf`, section 7.8: `Check whether your program works`
+ * [3] Cosma Shalizi, 'Writing R functions', [PDF](http://www.stat.cmu.edu/~cshalizi/402/programming/writing-functions.pdf), section 7.8: `Check whether your program works`
 
 
 ## TE.1: Prefer to put unit tests in seperate files [1]
@@ -1866,7 +1867,7 @@ This is a non-rule however, see the PA section.
 # Tips
 
 
-All from Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', `https://www.youtube.com/watch?v=ytbX-T1A8wE`:
+All from Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE):
 
 ## Tips
 
