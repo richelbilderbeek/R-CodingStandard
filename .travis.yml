@@ -2,6 +2,7 @@ sudo: true
 
 install:
  - sudo apt-get install pandoc
+ - sudo apt-get install texlive 
 
 script:
  - ./build_pdf.sh
