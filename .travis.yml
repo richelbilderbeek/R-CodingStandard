@@ -1,2 +1,7 @@
+sudo: true
+
+install:
+ - sudo apt-get install pandoc
+
 script:
-  - ./build_pdf.sh
+ - ./build_pdf.sh
