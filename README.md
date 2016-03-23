@@ -1,5 +1,9 @@
 # R-CodingStandard
 
+[![Travis CI logo](TravisCI.png)](https://travis-ci.org)
+
+[![Build Status](https://travis-ci.org/richelbilderbeek/R-CodingStandard.svg?branch=master)](https://travis-ci.org/richelbilderbeek/R-CodingStandard)
+
 [R-CodingStandard](R-CodingStandard.md) ([PDF](R-CodingStandard.pdf)) is a coding standard for R, combining:
 
  * The book 'Advanced R' by Hadley Wickham, CRC Press, 2014
