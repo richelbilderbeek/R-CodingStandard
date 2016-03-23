@@ -1,5 +1,2 @@
-language: r
-pandoc_version: 1.16
-
 script:
-  - pandoc R-CodingStandard.md -o R-CodingStandard.pdf
+  - ./build_pdf.sh
