@@ -838,12 +838,16 @@ x = 42  # Bad [1-4]
 Tools like `lintr` and `formatr` will signal if you use
 the less preferred form of assignment.
 
+Yihui Xie is a notable exception that prefers using `=` over `<-` for assignment, and he
+knows he is the exception [5].
+
 ### References
 
  * [1] Google's R Style Guide: `Use <-, not =, for assignment`
  * [2] 'R Style. An Rchaeological Commentary.' by Paul E. Johnson, February 13, 2015, `3.2 (SEA .95). Use "<-" not "=" for assignments`
  * [3] 'R packages' by Hadley Wickham, O'Reilly Media, Inc., 2015, Chapter 3, paragraph 'Assignment': `Use <-, not =, for assignments`
  * [4] Martin Maechler, Keynote Speech at useR!, 2014, 'Good Practices in R Programming', [YouTube](https://www.youtube.com/watch?v=ytbX-T1A8wE), `Rule 2: Keep R source well-readable and maintainable`
+ * [5] [Yihui Xie's website, notes on UseR!, 2014](http://yihui.name/en/2014/07/a-few-notes-on-user2014): `Martin Mächler: good practices in R programming. [...]. One minor and subjective issue is = vs <-. Not many people are with me [...].
 
 ## O.3: Avoid using semicolons `;` [1]
           
